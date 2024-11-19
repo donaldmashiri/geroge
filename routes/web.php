@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AssetController;
+use App\Http\Controllers\GatePassController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +22,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::middleware(['auth'])->group(function () {
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/report', action: [App\Http\Controllers\HomeController::class, 'report'])->name('report');
+
+Route::resource('assets', AssetController::class);
+Route::get('/pending', action: [GatePassController::class, 'pending'])->name('gate-passes.pending');
+Route::resource('gate-passes', controller: GatePassController::class);
+Route::resource('users', UserController::class);
+
+});

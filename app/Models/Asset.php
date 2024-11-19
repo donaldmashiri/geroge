@@ -10,4 +10,9 @@ class Asset extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'type' ];
+
+    public function gatePasses()
+    {
+        return $this->hasMany(GatePass::class); // Define the relationship to GatePass
+    }
 }

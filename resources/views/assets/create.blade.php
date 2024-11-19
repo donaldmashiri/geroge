@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
         <div class="row justify-content-center">
             @include('layouts.sidebar')
             <div class="col-md-9">
@@ -29,6 +29,24 @@
                                     <label for="name">{{ __('Name') }}</label>
                                     <input id="name" type="text" class="form-control" name="name" value="{{ isset($asset) ? $asset->name : ''}}" required>
                                     @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="type">{{ __('Valuable Type') }}</label>
+                                    <select name="type" id="type" class="form-control">
+                                        <option value="">Select type</option>
+                                        <option value="low">Low</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="high">High</option>
+                                    </select>
+
+                                    @error('type')
                                     <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

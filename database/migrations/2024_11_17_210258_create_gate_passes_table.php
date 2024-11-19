@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('asset_id');
             $table->integer('user_id');
             $table->text('description');
+            $table->text('quantity');
             $table->string('status');
             $table->timestamps();
         });

@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
         <div class="row justify-content-center">
             @include('layouts.sidebar')
             <div class="col-md-9">
@@ -31,10 +31,13 @@
                                 <tbody>
                                 @foreach($assets as $asset)
                                     <tr>
-                                        <td>AS00 {{$asset->id}} </td>
+                                        <td>AS00{{$asset->id}} </td>
                                         <td> {{$asset->name}} </td>
                                         <td> {{$asset->type}} </td>
                                         <td> {{$asset->created_at}} </td>
+                                        <td>
+                                            <a href="{{ route('assets.edit', $asset->id) }}">Edit</a>
+                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
