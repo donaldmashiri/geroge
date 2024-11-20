@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 
 Auth::routes();
@@ -27,9 +27,10 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/report', action: [App\Http\Controllers\HomeController::class, 'report'])->name('report');
 
-Route::resource('assets', AssetController::class);
+Route::resource('asset', AssetController::class);
 Route::get('/pending', action: [GatePassController::class, 'pending'])->name('gate-passes.pending');
 Route::resource('gate-passes', controller: GatePassController::class);
 Route::resource('users', UserController::class);
+Route::resource('dispatches', \App\Http\Controllers\DispatchController::class);
 
 });

@@ -12,7 +12,7 @@
                             <i class="bi bi-tools"></i> {{ __('Asset Management') }}
                         </h5>
                             <div class="justify-content-end">
-                                <a href="{{route('assets.create')}}" class="btn btn-primary btn-sm justify-content-end">   <i class="bi bi-plus"></i> Add asset</a>
+                                <a href="{{route('asset.create')}}" class="btn btn-primary btn-sm justify-content-end">   <i class="bi bi-plus"></i> Add asset</a>
                             </div>
                     </div>
                     <div class="card-body">

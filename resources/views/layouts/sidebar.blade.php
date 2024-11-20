@@ -20,7 +20,7 @@
                 {{-- @if(auth()->user()->role_id == 2 || auth()->user()->role_id == 3) --}}
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('assets.index') }}">
+                    <a class="nav-link" href="{{ route('asset.index') }}">
                         <i class="bi bi-tools"></i> Assets
                     </a>
                 </li>
@@ -44,6 +44,12 @@
                         <i class="bi bi-calendar-check"></i> All Gate Pass
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dispatches.index') }}">
+                        <i class="bi bi-tools"></i> Dispatches
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link fw-bolder" href="{{ route('report') }}">
                         <i class="bi bi-file-earmark-text"></i> Reports

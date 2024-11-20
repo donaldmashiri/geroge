@@ -13,12 +13,12 @@
 
                         </h5>
                         <div class="justify-content-end">
-                            <a href="{{route('assets.index')}}" class="btn btn-secondary btn-sm justify-content-end"> <i class="bi bi-back"></i> back</a>
+                            <a href="{{route('asset.index')}}" class="btn btn-secondary btn-sm justify-content-end"> <i class="bi bi-back"></i> back</a>
                         </div>
                     </div>
                     <div class="card-body">
                         @include('layouts.messages')
-                        <form method="POST" action="{{ isset($asset) ? route('assets.update', $asset->id) : route('assets.store') }}">
+                        <form method="POST" action="{{ isset($asset) ? route('asset.update', $asset->id) : route('asset.store') }}">
                             @if(isset($asset))
                                 @method('PUT')
                             @endif

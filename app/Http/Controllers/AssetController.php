@@ -13,7 +13,7 @@ class AssetController extends Controller
     public function index()
     {
         $assets = Asset::all();
-        return view('assets.index', compact('assets'));
+        return view('asset.index', compact('assets'));
     }
 
     /**
@@ -21,7 +21,7 @@ class AssetController extends Controller
      */
     public function create()
     {
-        return view('assets.create');
+        return view('asset.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class AssetController extends Controller
      */
     public function edit(Asset $asset)
     {
-        //
+        return view('asset.create', compact('asset'));
     }
 
     /**
@@ -74,6 +74,6 @@ class AssetController extends Controller
     {
         $asset = Asset::findOrFail($id);
         $asset->delete();
-        return redirect()->route('assets.index')->with('status', 'Asset deleted successfully.');
+        return redirect()->route('asset.index')->with('status', 'Asset deleted successfully.');
     }
 }

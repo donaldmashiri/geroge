@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dispatch;
+use App\Models\GatePass;
 use Illuminate\Http\Request;
 
 class DispatchController extends Controller
@@ -12,7 +13,8 @@ class DispatchController extends Controller
      */
     public function index()
     {
-        //
+        $dispatches = Dispatch::all();
+        return view('dispatches.index', compact('dispatches'));
     }
 
     /**
@@ -20,7 +22,8 @@ class DispatchController extends Controller
      */
     public function create()
     {
-        //
+        $gatePasses = GatePass::where('status', 'approved')->get();
+        return view('dispatches.create', compact('gatePasses'));
     }
 
     /**
@@ -28,7 +31,18 @@ class DispatchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'dispatched_to' => 'required|string|max:255',
+            'gate_pass_id' => 'required',
+        ]);
+
+        $dispatch = Dispatch::create([
+            'gate_pass_id' => $validatedData['gate_pass_id'],
+            'dispatched_to' => $validatedData['dispatched_to'],
+            'user_id' => auth()->user()->id,
+        ]);
+
+        return back()->with('success', 'Asset dispatched successfully.');
     }
 
     /**
