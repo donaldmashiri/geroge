@@ -33,4 +33,5 @@ Route::resource('gate-passess', controller: GatePassController::class);
 Route::resource('userss', UserController::class);
 Route::resource('dispatchess', \App\Http\Controllers\DispatchController::class);
 
+
 });
