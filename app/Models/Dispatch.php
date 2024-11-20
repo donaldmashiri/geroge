@@ -11,4 +11,9 @@ class Dispatch extends Model
 
     protected $fillable = ['user_id', 'gate_pass_id', 'dispatched_to'];
 
+    public function gatePass()
+    {
+        return $this->belongsTo(GatePass::class);
+    }
+
 }

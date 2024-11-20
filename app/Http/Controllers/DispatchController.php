@@ -22,7 +22,19 @@ class DispatchController extends Controller
      */
     public function create()
     {
-        $gatePasses = GatePass::where('status', 'approved')->get();
+        // Get IDs of gate passes that have already been dispatched
+        $dispatchedGatePassIds = Dispatch::pluck('gate_pass_id')->toArray();
+
+        // Get gate passes that are approved and not in the dispatched list
+        $gatePasses = GatePass::where('status', 'approved')
+            ->whereNotIn('id', $dispatchedGatePassIds)
+            ->get();
+
+        if ($gatePasses->isEmpty()) {
+            return back()->with('error', 'No available gate passes for dispatch.');
+
+        }
+
         return view('dispatches.create', compact('gatePasses'));
     }
 

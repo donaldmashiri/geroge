@@ -21,4 +21,9 @@ class GatePass extends Model
         return $this->belongsTo(Asset::class); // Define the relationship to Asset
     }
 
+    public function dispatches()
+    {
+        return $this->hasMany(Dispatch::class);
+    }
+
 }

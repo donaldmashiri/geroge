@@ -24,16 +24,14 @@
                         <i class="bi bi-tools"></i> Assets
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('gate-passes.index') }}">
-                        <i class="bi bi-calendar-check"></i> Gate Pass
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-danger" href="{{ route('gate-passes.create') }}">
                         <i class="bi bi-plus-circle"></i> Request Gate pass
                     </a>
                 </li>
+
+                 @if(auth()->user()->role == 'admin' || auth()->user()->role == 'manager')
                 <li class="nav-item">
                     <a class="nav-link text-warning" href="{{ route('gate-passes.pending') }}">
                         <i class="bi bi-hourglass-split"></i> Pending Approval
@@ -49,6 +47,7 @@
                         <i class="bi bi-tools"></i> Dispatches
                     </a>
                 </li>
+                @endif
 
                 <li class="nav-item">
                     <a class="nav-link fw-bolder" href="{{ route('report') }}">
