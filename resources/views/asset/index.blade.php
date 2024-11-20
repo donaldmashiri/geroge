@@ -36,7 +36,7 @@
                                         <td> {{$asset->type}} </td>
                                         <td> {{$asset->created_at}} </td>
                                         <td>
-                                            <a href="{{ route('assets.edit', $asset->id) }}">Edit</a>
+                                            <a href="{{ route('asset.edit', $asset->id) }}">Edit</a>
                                          </td>
                                     </tr>
                                 @endforeach
