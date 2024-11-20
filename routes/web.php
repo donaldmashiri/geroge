@@ -22,15 +22,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auths'])->group(function () {
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/report', action: [App\Http\Controllers\HomeController::class, 'report'])->name('report');
+Route::get('/homes', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/reports', action: [App\Http\Controllers\HomeController::class, 'report'])->name('report');
 
-Route::resource('asset', AssetController::class);
-Route::get('/pending', action: [GatePassController::class, 'pending'])->name('gate-passes.pending');
-Route::resource('gate-passes', controller: GatePassController::class);
-Route::resource('users', UserController::class);
-Route::resource('dispatches', \App\Http\Controllers\DispatchController::class);
+Route::resource('assets', AssetController::class);
+Route::get('/pendings', action: [GatePassController::class, 'pending'])->name('gate-passes.pending');
+Route::resource('gate-passess', controller: GatePassController::class);
+Route::resource('userss', UserController::class);
+Route::resource('dispatchess', \App\Http\Controllers\DispatchController::class);
 
 });

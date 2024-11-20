@@ -35,6 +35,17 @@
                                     @enderror
                                 </div>
                             </div>
+                                <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="serial_number">{{ __('Serial Number') }}</label>
+                                    <input id="serial_number" type="text" class="form-control" name="serial_number" value="{{ isset($asset) ? $asset->serial_number : ''}}" required>
+                                    @error('serial_number')
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-md-6 form-group mb-3">
