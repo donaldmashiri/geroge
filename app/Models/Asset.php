@@ -9,7 +9,7 @@ class Asset extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'type' ];
+    protected $fillable = ['name', 'type', 'serial_number' ];
 
     public function gatePasses()
     {

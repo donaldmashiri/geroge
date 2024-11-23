@@ -32,11 +32,13 @@ class AssetController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:255',
+            'serial_number' => 'required|string|max:255',
         ]);
 
         $asset = Asset::create([
             'name' => $validatedData['name'],
             'type' => $validatedData['type'],
+            'serial_number' => $validatedData['serial_number'],
 
         ]);
 

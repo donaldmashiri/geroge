@@ -34,6 +34,7 @@
                                     <option value="admin">Admin</option>
                                     <option value="manager">Manager</option>
                                     <option value="guard">Guard</option>
+                                    <option value="user">user</option>
                                 </select>
                                 @error('role')
                                     <span class="invalid-feedback" role="alert">

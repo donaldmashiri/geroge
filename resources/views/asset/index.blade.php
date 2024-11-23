@@ -24,6 +24,7 @@
                                     <th scope="col">Asset#</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Type</th>
+                                    <th scope="col">Serial#</th>
                                     <th scope="col">created_by</th>
                                     <th scope="col"></th>
                                 </tr>
@@ -34,6 +35,7 @@
                                         <td>AS00{{$asset->id}} </td>
                                         <td> {{$asset->name}} </td>
                                         <td> {{$asset->type}} </td>
+                                        <td> {{$asset->serial_number}} </td>
                                         <td> {{$asset->created_at}} </td>
                                         <td>
                                             <a href="{{ route('asset.edit', $asset->id) }}">Edit</a>
