@@ -29,6 +29,7 @@
                                     <th scope="col"></th>
                                 </tr>
                                 </thead>
+
                                 <tbody>
                                 @foreach($assets as $asset)
                                     <tr>
