@@ -30,7 +30,7 @@
                                         <select name="gate_pass_id" id="type" class="form-control">
                                             <option value="">Select Request</option>
                                             @foreach ($gatePasses as $gatePass)
-                                                <option value="{{ $gatePass->id }}">GP00{{ $gatePass->id }}</option>
+                                                <option value="{{ $gatePass->id }}">{{ $gatePass->asset->name }} (GP00{{ $gatePass->id }})</option>
                                             @endforeach
                                         </select>
 

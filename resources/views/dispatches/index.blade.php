@@ -23,6 +23,9 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Req#</th>
+                                    <th scope="col">Asset</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Quantity</th>
                                     <th scope="col">Dispatched To</th>
                                     <th scope="col">date</th>
                                 </tr>
@@ -32,6 +35,9 @@
                                     <tr>
                                         <td>{{$dispatch->id}} </td>
                                         <td> GP00{{$dispatch->gate_pass_id}} </td>
+                                        <td> {{$dispatch->gatePass->asset->name}} </td>
+                                        <td> {{$dispatch->gatePass->description}} </td>
+                                        <td> {{$dispatch->gatePass->quantity}} </td>
                                         <td> {{$dispatch->dispatched_to}} </td>
                                         <td> {{$dispatch->created_at}} </td>
                                     </tr>

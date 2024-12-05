@@ -54,7 +54,7 @@ class DispatchController extends Controller
             'user_id' => auth()->user()->id,
         ]);
 
-        return back()->with('success', 'Asset dispatched successfully.');
+        return redirect(route('dispatches.index'))->with('success', 'Asset dispatched successfully.');
     }
 
     /**

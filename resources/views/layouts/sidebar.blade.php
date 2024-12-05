@@ -42,12 +42,14 @@
                         <i class="bi bi-calendar-check"></i> All Gate Pass
                     </a>
                 </li>
+
+                @endif
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('dispatches.index') }}">
                         <i class="bi bi-tools"></i> Dispatches
                     </a>
                 </li>
-                @endif
 
                 <li class="nav-item">
                     <a class="nav-link fw-bolder" href="{{ route('report') }}">
